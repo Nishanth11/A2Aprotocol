@@ -6,15 +6,7 @@ Build a distributed multi-agent AI system for industrial automation using Google
 
 Transform your monolithic industrial AI agent into a **distributed multi-agent system** where specialized agents collaborate through standardized communication protocols.
 
-### The Evolution
-
-**Previous Approach (Parts 1-4):**
-
-- Single monolithic agent handling everything
-- Complex, hard to maintain
-- Limited scalability
-
-**New Multi-Agent Approach:**
+**Multi-Agent Approach:**
 
 - **Specialized agents** with focused responsibilities
 - **Standardized communication** via A2A protocol
@@ -142,46 +134,6 @@ graph TB
 - PostgreSQL/TimescaleDB
 - OPC UA Server (real or simulated)
 - Anthropic API key (for Claude LLM)
-
-## 🚀 Installation
-
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/yourusername/a2a-industrial-multiagent.git
-cd a2a-industrial-multiagent
-```
-
-### 2. Create Virtual Environment
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure Environment
-
-Create `.env` file:
-
-```env
-# LLM Configuration
-ANTHROPIC_API_KEY=your_anthropic_api_key
-
-# Database Configuration
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_HOST=localhost
-DB_PORT=5432
-
-# OPC UA Configuration
-OPC_SERVER_URL=opc.tcp://desktop-fjjsr46:26543/BatchPlantServer
-```
 
 ## 📖 Usage
 
@@ -418,50 +370,3 @@ agent_card = AgentCard(
   "agents": [{ "url": "http://localhost:40005" }]
 }
 ```
-
-## 🚧 Troubleshooting
-
-### Common Issues
-
-**1. Agent Discovery Fails**
-
-- Verify all agents are running
-- Check agent_registry.json paths
-- Ensure network connectivity
-
-**2. Task Timeout**
-
-```python
-# Increase timeout in orchestrator
-self.child_agent_timeout = 60.0  # seconds
-```
-
-**3. JSON-RPC Errors**
-
-- Validate message format
-- Check method names match exactly
-- Ensure params structure is correct
-
-## 🛣️ Roadmap
-
-- [ ] Add WebSocket support for real-time updates
-- [ ] Implement agent health monitoring dashboard
-- [ ] Add authentication/authorization
-- [ ] Create agent deployment with Docker
-- [ ] Build web-based orchestration UI
-- [ ] Add more specialized agents (maintenance, quality, etc.)
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Implement with tests
-4. Submit a Pull Request
-
-## 📝 License
-
-MIT License - see [LICENSE](LICENSE) file
-
-**⭐ Star this repo to support multi-agent industrial AI development!**
